@@ -16,11 +16,12 @@ Dataset
 ------
 **Three public datasets, i.e., [CAVE](https://www1.cs.columbia.edu/CAVE/databases/multispectral/ "CAVE"), [Harvard](http://vision.seas.harvard.edu/hyperspec/explore.html "Harvard"), [Foster](https://personalpages.manchester.ac.uk/staff/d.h.foster/Local\_Illumination\_HSIs/Local\_Illumination\_HSIs\_2015.html "Foster"), are employed to verify the effectiveness of the  proposed MCNet. Since there are too few images in these datasets for deep learning algorithm, we augment the training data. With respect to the specific details, please see the implementation details section.**
 
-##Requirement
-pyTorch 0.3.1, cuda 9.0
+Requirement
+---------
+**pyTorch 0.3.1, cuda 9.0**
 
-##Training
-
+Training
+--------
 **The ADAM optimizer with beta_1 = 0.9, beta _2 = 0.999 is employed to train our network.  The learning rate is initialized as 10^-4 for all layers, which decreases by a half at every 35 epochs.**
 
 **You can train or test directly from the command line as such:**
@@ -28,8 +29,8 @@ pyTorch 0.3.1, cuda 9.0
 ###### # python train.py --cuda --datasetName CAVE  --upscale_factor 4
 ###### # python test.py --cuda --model_name checkpoint/model_4_epoch_200.pth
 
-##Result
-
+Result
+--------
 **To qualitatively measure the proposed MCNet, three evaluation methods are employed to verify the effectiveness of the algorithm, including  peak signal-to-noise ratio (PSNR), structural similarity (SSIM), and spectral angle mapping (SAM). **
 
 | Scale  |  CAVE |  Harvard |  Foster |
