@@ -41,4 +41,4 @@ Result
 |  x3 |  41.031 / 0.9526 / 2.809  |  42.681 / 0.9627 / 2.214 | 55.017 / 0.9970 / 5.126  |   
 |  x4 | 39.026 / 0.9319 / 3.292 |  40.081 / 0.9367 / 2.410 | 52.225 / 0.9941 / 5.685  | 
 
-![image](https://github.com/qianngli/Images/blob/master/visual_cave_lemons.png)
+![image](https://raw.githubusercontent.com/qianngli/Images/master/visual_cave_lemons.tiff)
