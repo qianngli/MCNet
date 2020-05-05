@@ -1,5 +1,5 @@
-##MCNet
-
+MCNet
+======
 **This is an implementation of  Mixed  2D/3D Convolutional Network (MCNet) for Hyperspectral Image Super-Resolution on PyTorch.**
 
 ##Citation
