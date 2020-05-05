@@ -1,4 +1,4 @@
- This is an implementation of  Mixed  2D/3D Convolutional Network (MCNet) for Hyperspectral Image Super-Resolution on PyTorch
+ ##MCNet: This is an implementation of  Mixed  2D/3D Convolutional Network (MCNet) for Hyperspectral Image Super-Resolution on PyTorch
  If you use it in your projects, please consider citing this paper.
  
  ====================================================================================================
@@ -9,7 +9,7 @@
   }
 =====================================================================================================
 
-Dataset: 
+##Dataset: 
 1) CAVE
 2) Harvard
 3) Foster
