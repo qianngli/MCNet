@@ -2,7 +2,8 @@ MCNet
 ======
 **This is an implementation of  Mixed  2D/3D Convolutional Network (MCNet) for Hyperspectral Image Super-Resolution on PyTorch.**
 
-##Citation
+Citation
+--------
 **If you use it in your projects, please consider citing this paper.**
 
  @article{li2020mixed,
@@ -11,8 +12,8 @@ MCNet
     journal={Remote Sensing}
   }
   
-##Dataset
-
+Dataset
+------
 **Three public datasets, i.e., [CAVE](https://www1.cs.columbia.edu/CAVE/databases/multispectral/ "CAVE"), [Harvard](http://vision.seas.harvard.edu/hyperspec/explore.html "Harvard"), [Foster](https://personalpages.manchester.ac.uk/staff/d.h.foster/Local\_Illumination\_HSIs/Local\_Illumination\_HSIs\_2015.html "Foster"), are employed to verify the effectiveness of the  proposed MCNet. Since there are too few images in these datasets for deep learning algorithm, we augment the training data. With respect to the specific details, please see the implementation details section.**
 
 ##Requirement
