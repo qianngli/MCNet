@@ -1,4 +1,3 @@
-#coding:utf-8
 import os
 import torch
 import torch.backends.cudnn as cudnn
@@ -8,22 +7,21 @@ from torch.autograd import Variable
 from torch.utils.data import DataLoader
 from tensorboardX import SummaryWriter
 
-import pdb
-from option import  opt
+from option import opt
 from model import MCNet
 from data_utils import TrainsetFromFolder, ValsetFromFolder
 from eval import PSNR
 from torch.optim.lr_scheduler import MultiStepLR
-
-
-import scipy.io as scio  
-psnr = []       
+         
 out_path = '/media/hdisk/liqiang/hyperSR/result/' +  opt.datasetName + '/'
 
       
 def main():
 
     if opt.show:
+        if not os.path.exists("logs/"):
+            os.makedirs("logs/")
+        
         global writer
         writer = SummaryWriter(log_dir='logs') 
        
@@ -100,15 +98,17 @@ def train(train_loader, optimizer, model, criterion, epoch):
                                    
         if iteration % 100 == 0:
             print("===> Epoch[{}]({}/{}): Loss: {:.10f}".format(epoch, iteration, len(train_loader), loss.data[0]))
-
-        if opt.show:
-            writer.add_scalar('Train/Loss', loss.data[0], niter) 
+        
+        
+        if opt.show:        
+            niter = epoch * len(train_loader) + iteration
+            if niter % 500 == 0:
+                writer.add_scalar('Train/Loss', loss.data[0], niter) 
 
 def val(val_loader, model, epoch):
 	            
     model.eval()
     val_psnr = 0
-    global best_psnr
 
     for iteration, batch in enumerate(val_loader, 1):
         input, HR = Variable(batch[0], volatile=True),  Variable(batch[1])
@@ -121,16 +121,15 @@ def val(val_loader, model, epoch):
         val_psnr += PSNR(SR.cpu().data[0].numpy(), HR.cpu().data[0].numpy()) 
     val_psnr = val_psnr / len(val_loader) 
     print("PSNR = {:.3f}".format(val_psnr))  
-
-    psnr.append(val_psnr)    
+    
     if opt.show:
         writer.add_scalar('Val/PSNR',val_psnr, epoch)      
     
 def save_checkpoint(epoch, model, optimizer):
-    model_out_path = "checkpoint_fpn/" + "model_{}_epoch_{}.pth".format(opt.upscale_factor, epoch)
+    model_out_path = "checkpoint/" + "model_{}_epoch_{}.pth".format(opt.upscale_factor, epoch)
     state = {"epoch": epoch , "model": model.state_dict(), "optimizer":optimizer.state_dict()}
-    if not os.path.exists("checkpoint_fpn/"):
-        os.makedirs("checkpoint_fpn/")     	
+    if not os.path.exists("checkpoin/"):
+        os.makedirs("checkpoint/")     	
     torch.save(state, model_out_path)
  
           
