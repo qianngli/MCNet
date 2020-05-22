@@ -1,6 +1,20 @@
 MCNet
 ======
-**This is an implementation of  Mixed  2D/3D Convolutional Network (MCNet) for Hyperspectral Image Super-Resolution on PyTorch.**
+**This is an implementation of  Mixed  2D/3D Convolutional Network for Hyperspectral Image Super-Resolution.**
+
+Cite 
+--------
+** Please consider cite MCNet for hyperspectral image super-resolution if you find it helpful.**
+
+@article{Yuan2017Hyperspectral,
+	title={Mixed  {2D/3D} Convolutional Network  for Hyperspectral Image Super-Resolution},
+	author={Q. Li and Q. Wang and X. Li},
+	journal={Remote Sensing},
+	volume={12},
+	number={10},
+	pages={1660},
+	year={2020}
+}
   
 Dataset
 ------
@@ -8,7 +22,7 @@ Dataset
 
 Requirement
 ---------
-**pyTorch 0.3.1, cuda 9.0**
+**python 2.7, pyTorch 0.3.1, cuda 9.0**
 
 Training
 --------
