@@ -1,4 +1,3 @@
-#coding:utf-8
 import torch
 import torch.nn as nn
 import pdb
@@ -128,9 +127,9 @@ class Block(nn.Module):
         return x  
                                                                                                                         
                         
-class SSRNet(nn.Module):
+class MCNet(nn.Module):
     def __init__(self, args):
-        super(SSRNet, self).__init__()
+        super(MCNet, self).__init__()
         
         scale = args.upscale_factor
         n_colors = args.n_colors
@@ -138,12 +137,12 @@ class SSRNet(nn.Module):
         n_conv = args.n_conv
         kernel_size = 3
         
-#        band_mean = (0.0939, 0.0950, 0.0869, 0.0839, 0.0850, 0.0809, 0.0769, 0.0762, 0.0788, 0.0790, 0.0834, 
-#                     0.0894, 0.0944, 0.0956, 0.0939, 0.1187, 0.0903, 0.0928, 0.0985, 0.1046, 0.1121, 0.1194, 
-#                     0.1240, 0.1256, 0.1259, 0.1272, 0.1291, 0.1300, 0.1352, 0.1428, 0.1541) #CAVE
-        band_mean = (0.0100, 0.0137, 0.0219, 0.0285, 0.0376, 0.0424, 0.0512, 0.0651, 0.0694, 0.0723, 0.0816,
-                     0.0950, 0.1338, 0.1525, 0.1217, 0.1187, 0.1337, 0.1481, 0.1601, 0.1817, 0.1752, 0.1445, 
-                     0.1450, 0.1378, 0.1343, 0.1328, 0.1303, 0.1299, 0.1456, 0.1433, 0.1303) #Hararvd 
+        band_mean = (0.0939, 0.0950, 0.0869, 0.0839, 0.0850, 0.0809, 0.0769, 0.0762, 0.0788, 0.0790, 0.0834, 
+                     0.0894, 0.0944, 0.0956, 0.0939, 0.1187, 0.0903, 0.0928, 0.0985, 0.1046, 0.1121, 0.1194, 
+                     0.1240, 0.1256, 0.1259, 0.1272, 0.1291, 0.1300, 0.1352, 0.1428, 0.1541) #CAVE
+#        band_mean = (0.0100, 0.0137, 0.0219, 0.0285, 0.0376, 0.0424, 0.0512, 0.0651, 0.0694, 0.0723, 0.0816,
+#                     0.0950, 0.1338, 0.1525, 0.1217, 0.1187, 0.1337, 0.1481, 0.1601, 0.1817, 0.1752, 0.1445, 
+#                     0.1450, 0.1378, 0.1343, 0.1328, 0.1303, 0.1299, 0.1456, 0.1433, 0.1303) #Hararvd 
 
 #        band_mean = (0.0944, 0.1143, 0.1297, 0.1368, 0.1599, 0.1853, 0.2029, 0.2149, 0.2278, 0.2275, 0.2311,
 #                     0.2331, 0.2265, 0.2347, 0.2384, 0.1187, 0.2425, 0.2441, 0.2471, 0.2453, 0.2494, 0.2584,
@@ -165,7 +164,7 @@ class SSRNet(nn.Module):
         self.SSRM2 = Block(wn, n_feats, n_conv) 
         self.SSRM3 = Block(wn, n_feats, n_conv)           
         self.SSRM4 = Block(wn, n_feats, n_conv)  
-#       self.SSRM5 = Block(wn, n_feats, n_conv)                                                 
+                                                
         tail = []
         tail.append(wn(nn.ConvTranspose3d(n_feats, n_feats, kernel_size=(3,2+scale,2+scale), stride=(1,scale,scale), padding=(1,1,1))))         
         tail.append(wn(nn.Conv3d(n_feats, 1, kernel_size, padding=kernel_size//2)))  
@@ -188,13 +187,10 @@ class SSRNet(nn.Module):
 
         x = self.SSRM4(x)
         x = torch.add(x, T) 
-        
-#        x = self.SSRM5(x)
-#        x = torch.add(x, T)
+       
                                                                                      
         x = self.tail(x)      
         x = x.squeeze(1)        
         x = x + self.band_mean.cuda()   
         return x                                                   
-        
-                                             
+                                            
