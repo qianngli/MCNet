@@ -7,7 +7,9 @@ Cite
 ** Please consider cite MCNet for hyperspectral image super-resolution if you find it helpful.**
 
 @article{Yuan2017Hyperspectral,
+
 	title={Mixed  {2D/3D} Convolutional Network  for Hyperspectral Image Super-Resolution},
+
 	author={Q. Li and Q. Wang and X. Li},
 	journal={Remote Sensing},
 	volume={12},
