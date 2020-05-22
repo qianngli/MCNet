@@ -1,13 +1,10 @@
 import torch.utils.data as data
 import torch
 import numpy as np
-import h5py
-import pdb
 
 from os import listdir
 from os.path import join
 import scipy.io as scio
-import random
 
 
 def is_image_file(filename):
@@ -46,4 +43,3 @@ class ValsetFromFolder(data.Dataset):
 
     def __len__(self):
         return len(self.image_filenames)   
-        
