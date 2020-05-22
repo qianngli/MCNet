@@ -14,8 +14,7 @@ Cite
 	volume={12},
 	number={10},
 	pages={1660},
-	year={2020}
-}
+	year={2020}}
   
 Dataset
 ------
