@@ -6,8 +6,7 @@ import torch.nn as nn
 from torch.autograd import Variable
 from option import  opt
 from data_utils import is_image_file
-from model_new import SSRNet
-import pdb
+from model import MCNet
 import scipy.io as scio  
 from eval import PSNR, SSIM, SAM
                    
