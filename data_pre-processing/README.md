@@ -17,5 +17,5 @@ The floder is to reconstruct test set. Simialrity, you can run .m file in MARLAB
 
 **band mean**
 ---------------------------
-The floder is to compute mean_band with respect to traning set. Simialrity, you can run .m file in MARLAB 
+The floder is to compute the mean  of each band with respect to traning set. You can run bandmean.m file in MARLAB 
 
