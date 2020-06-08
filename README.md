@@ -2,7 +2,7 @@ MCNet
 ======
 **This is an implementation of  Mixed  2D/3D Convolutional Network for Hyperspectral Image Super-Resolution.**
 
-Cite 
+Citation 
 --------
 **Please consider cite MCNet for hyperspectral image super-resolution if you find it helpful.**
 
@@ -19,6 +19,8 @@ Cite
 Dataset
 ------
 **Three public datasets, i.e., [CAVE](https://www1.cs.columbia.edu/CAVE/databases/multispectral/ "CAVE"), [Harvard](http://vision.seas.harvard.edu/hyperspec/explore.html "Harvard"), [Foster](https://personalpages.manchester.ac.uk/staff/d.h.foster/Local\_Illumination\_HSIs/Local\_Illumination\_HSIs\_2015.html "Foster"), are employed to verify the effectiveness of the  proposed MCNet. Since there are too few images in these datasets for deep learning algorithm, we augment the training data. With respect to the specific details, please see the implementation details section.**
+
+**Moreover, we also provide the code about data pre-processing in floder "data pre-processing". The floder contains three parts, including training set augment, test set pre-processing, and band mean for all training set.
 
 Requirement
 ---------
