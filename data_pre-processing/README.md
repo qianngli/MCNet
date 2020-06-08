@@ -19,11 +19,9 @@ Moreover, 'upscale_factor' also can be changed.
 
 The floder is to reconstruct test set. Simialrity, you can run .m file in MARLAB arrocding to the corresponding dataset.
 
-==========================================================
+----------------------------------------------------------
 For example, run generate_testdata_CAVE.m 
-==========================================================
-
-
+----------------------------------------------------------
 
 
 **## band mean ##**
