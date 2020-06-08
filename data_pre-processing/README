@@ -1,0 +1,46 @@
+******************************************************************************************************
+Please consider cite MCNet for hyperspectral image super-resolution if you find it helpful.
+
+@article{Li2020mixed,
+         title={Mixed  {2D/3D} Convolutional Network  for Hyperspectral Image Super-Resolution},
+         author={Q. Li and Q. Wang and X. Li},
+         journal={Remote Sensing},
+         volume={12},
+         number={10},
+         pages={1660},
+         year={2020}}
+
+***************************************************************************************************************************
+
+The floder contains three parts: training set augment, test set pre-processing, and band mean.
+
+
+## training set augment ##
+
+After obtaining training set, we augmet these original hyperspectral image by training_set_augment floder. 
+You can  run each .m file in MARLAB arrocding to the corresponding dataset.
+
+=========================================================
+For example, run data_CAVE.m 
+=========================================================
+ 
+Note that 'savePath' and 'srPath' need to be redefined according to the location of the file.
+Moreover, 'upscale_factor' also can be changed. 
+
+
+
+## test set pre-processing ##
+
+The floder is to reconstruct test set. Simialrity, you can run .m file in MARLAB arrocding to the corresponding dataset.
+
+==========================================================
+For example, run generate_testdata_CAVE.m 
+==========================================================
+
+
+
+
+## band mean ##
+
+The floder is to compute mean_band with respect to traning set. Simialrity, you can run .m file in MARLAB 
+
