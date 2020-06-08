@@ -1,7 +1,5 @@
-=======================
-
 **The floder contains three parts: training set augment, test set pre-processing, and band mean.**
-
+-------------------------
 
 **training set augment**
 -------------------------
