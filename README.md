@@ -24,7 +24,7 @@ Dataset
 
 Requirement
 ---------
-**python 2.7, torchvision 0.3.1, cuda 9.0**
+**python 2.7, Pytorch 0.3.1, cuda 9.0**
 
 Training
 --------
