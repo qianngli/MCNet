@@ -2,20 +2,6 @@ MCNet
 ======
 **This is an implementation of  Mixed  2D/3D Convolutional Network for Hyperspectral Image Super-Resolution.**
 
-Citation 
---------
-**Please consider cite MCNet for hyperspectral image super-resolution if you find it helpful.**
-
-@article{Li2020mixed,
-
-	title={Mixed  {2D/3D} Convolutional Network  for Hyperspectral Image Super-Resolution},
-	author={Q. Li and Q. Wang and X. Li},
-	journal={Remote Sensing},
-	volume={12},
-	number={10},
-	pages={1660},
-	year={2020}}
-  
 Dataset
 ------
 **Three public datasets, i.e., [CAVE](https://www1.cs.columbia.edu/CAVE/databases/multispectral/ "CAVE"), [Harvard](http://vision.seas.harvard.edu/hyperspec/explore.html "Harvard"), [Foster](https://personalpages.manchester.ac.uk/staff/d.h.foster/Local\_Illumination\_HSIs/Local\_Illumination\_HSIs\_2015.html "Foster"), are employed to verify the effectiveness of the  proposed MCNet. Since there are too few images in these datasets for deep learning algorithm, we augment the training data. With respect to the specific details, please see the implementation details section.**
@@ -47,3 +33,18 @@ Result
 |  x4 | 39.026 / 0.9319 / 3.292 |  40.081 / 0.9367 / 2.410 | 52.225 / 0.9941 / 5.685  | 
 
 ![Image text](https://raw.githubusercontent.com/qianngli/Images/master/MCNet/visual_cave_lemons.png)
+
+Citation 
+--------
+**Please consider cite MCNet for hyperspectral image super-resolution if you find it helpful.**
+
+@article{Li2020mixed,
+
+	title={Mixed  {2D/3D} Convolutional Network  for Hyperspectral Image Super-Resolution},
+	author={Q. Li and Q. Wang and X. Li},
+	journal={Remote Sensing},
+	volume={12},
+	number={10},
+	pages={1660},
+	year={2020}}
+  
