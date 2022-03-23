@@ -19,7 +19,7 @@ Training
 **You can train or test directly from the command line as such:**
 
 ###### # python train.py --cuda --datasetName CAVE  --upscale_factor 4
-###### # python test.py --cuda --model_name checkpoint/model_4_epoch_200.pth
+###### # python test.py --cuda --model_name checkpoint/model_4_epoch_XXX.pth
 
 Result
 --------
